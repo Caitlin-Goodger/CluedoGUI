@@ -1,6 +1,9 @@
 # cluedo
 GUI cluedo game.
 
+Report view link:   
+https://docs.google.com/document/d/1M4eoUXEr4vX2pnypsVv1p6lq-iVzZp2QeX3HEH25wmw/edit?usp=sharing   
+
 Image assets:   
 6 character tokens  
 6 weapon tokens  
