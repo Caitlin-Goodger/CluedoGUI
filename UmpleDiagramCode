@@ -28,24 +28,23 @@ class GameClass {
     PlayerDecision {
       endTurn -> PlayerTurn;
       accuse -> Accusation;
-      suggest -> Suggestion;
+      [playerInRoom] suggest -> Suggestion;
     }
     
     Accusation {
-       playerWin -> GameWon;
-       playerLose -> PlayerTurn;
+       [playerCorrect] playerWin -> GameWon;
+       [playerWrong] playerLose -> PlayerTurn;
        allPlayersLose -> GameOver;
     }
     
     Suggestion {
-       makeSuggestion -> Refution;
+        makeSuggestion -> Refution;
     }
     
     Refution {
-       playersRefute -> PlayerTurn;
+       [playerHasCard] playersRefute -> PlayerTurn;
     }
     
  }
   
 }
-
