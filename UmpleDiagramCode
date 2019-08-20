@@ -1,0 +1,51 @@
+class GameClass {
+
+  
+  GameState {
+    
+    ConstructBoard {
+        boardConstructed -> InputPlayerCount;
+    }
+    
+    InputPlayerCount {
+      validInputRecieved -> StartGame;
+      invalidInputRecieved -> InputPlayerCount;
+    }
+    
+    StartGame {
+      startTurn -> PlayerTurn;
+    }
+    
+    PlayerTurn {
+      move -> Move;
+    }
+    
+    Move {
+      movesOver -> PlayerDecision;
+      movesLeft -> Move;
+    }
+    
+    PlayerDecision {
+      endTurn -> PlayerTurn;
+      accuse -> Accusation;
+      suggest -> Suggestion;
+    }
+    
+    Accusation {
+       playerWin -> GameWon;
+       playerLose -> PlayerTurn;
+       allPlayersLose -> GameOver;
+    }
+    
+    Suggestion {
+       makeSuggestion -> Refution;
+    }
+    
+    Refution {
+       playersRefute -> PlayerTurn;
+    }
+    
+ }
+  
+}
+
